@@ -1,0 +1,496 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Guide Log Book</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+
+*{
+box-sizing:border-box;
+font-family:Segoe UI;
+}
+
+:root{
+--bg1:#6366f1;
+--bg2:#22c55e;
+--card:rgba(255,255,255,0.9);
+--text:#000;
+--btn:#6366f1;
+}
+
+.dark{
+--bg1:#020617;
+--bg2:#1e293b;
+--card:#1e293b;
+--text:#fff;
+--btn:#22c55e;
+}
+
+body{
+margin:0;
+background:linear-gradient(135deg,var(--bg1),var(--bg2));
+color:var(--text);
+transition:0.4s;
+}
+
+header{
+text-align:center;
+padding:15px;
+font-size:22px;
+font-weight:bold;
+color:white;
+}
+
+.toggle{
+position:fixed;
+top:10px;
+right:10px;
+width:45px;
+height:45px;
+border-radius:50%;
+border:none;
+background:black;
+color:white;
+font-size:18px;
+}
+
+.container{
+padding:15px;
+max-width:900px;
+margin:auto;
+}
+
+.card{
+background:var(--card);
+padding:15px;
+border-radius:15px;
+margin-top:15px;
+margin-bottom:15px;
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+animation:fade 2s ease;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+.dashboard{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:10px;
+}
+
+.stat{
+background:var(--card);
+padding:10px;
+border-radius:10px;
+text-align:center;
+font-weight:bold;
+}
+
+input,textarea{
+width:100%;
+padding:10px;
+border:none;
+border-radius:8px;
+margin-top:5px;
+}
+
+button{
+width:100px;
+padding:10px;
+margin-top:8px;
+border:none;
+border-radius:8px;
+background:var(--btn);
+color:white;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.03);
+}
+
+canvas{
+width:100%;
+height:160px;
+border:2px dashed #999;
+border-radius:10px;
+background:white;
+touch-action:none;
+}
+
+.logCard{
+background:var(--card);
+padding:10px;
+border-radius:10px;
+margin-top:10px;
+}
+
+.reset{
+background:red;
+}
+
+</style>
+</head>
+
+<body>
+
+<button class="toggle" onclick="toggleDark()">🌙</button>
+
+<header>📘 Project Guide Log Book</header>
+
+<div class="container">
+
+<div class="dashboard">
+
+<div class="stat">
+Total Visits
+<h3 id="totalVisits">0</h3>
+</div>
+
+<div class="stat">
+Members
+<h3 id="totalMembers">0</h3>
+</div>
+
+<div class="stat">
+Last Visit
+<h3 id="lastVisit">None</h3>
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Team Members</h3>
+
+<input id="m1" placeholder="Member 1">
+<input id="m2" placeholder="Member 2">
+<input id="m3" placeholder="Member 3">
+<input id="m4" placeholder="Member 4">
+
+<button onclick="saveMembers()">Save Members</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>Add New Visit</h3>
+
+<input id="subject" placeholder="Topic Discussed">
+
+<textarea id="discussion" placeholder="Discussion"></textarea>
+
+<b>Members Attended</b>
+
+<div id="memberChecks"></div>
+
+<b>Guide Signature</b>
+
+<canvas id="sign"></canvas>
+
+<button onclick="clearSign()">Clear Signature</button>
+
+<button onclick="saveLog()">Save Visit</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>Visit History</h3>
+
+<div id="logs"></div>
+
+<button onclick="downloadAllPDF()">Download Full Project PDF</button>
+
+<button class="reset" onclick="resetAll()">Reset All Data</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+let members=JSON.parse(localStorage.getItem("members"))||["","","",""];
+let logs=JSON.parse(localStorage.getItem("logs"))||[];
+
+m1.value=members[0];
+m2.value=members[1];
+m3.value=members[2];
+m4.value=members[3];
+
+function saveMembers(){
+
+members=[m1.value,m2.value,m3.value,m4.value];
+
+localStorage.setItem("members",JSON.stringify(members));
+
+loadMemberChecks();
+updateDashboard();
+
+}
+
+function loadMemberChecks(){
+
+let div=document.getElementById("memberChecks");
+
+div.innerHTML="";
+
+members.forEach(m=>{
+
+if(m){
+
+div.innerHTML+=`
+<label>
+<input type="checkbox" value="${m}"> ${m}
+</label><br>
+`;
+
+}
+
+});
+
+}
+
+loadMemberChecks();
+
+
+let canvas=document.getElementById("sign");
+let ctx=canvas.getContext("2d");
+
+let drawing=false;
+
+function start(e){
+
+drawing=true;
+draw(e);
+
+}
+
+function end(){
+
+drawing=false;
+ctx.beginPath();
+
+}
+
+function draw(e){
+
+if(!drawing)return;
+
+let rect=canvas.getBoundingClientRect();
+
+let x=(e.touches?e.touches[0].clientX:e.clientX)-rect.left;
+let y=(e.touches?e.touches[0].clientY:e.clientY)-rect.top;
+
+ctx.lineWidth=2;
+ctx.lineCap="round";
+
+ctx.lineTo(x,y);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(x,y);
+
+}
+
+canvas.addEventListener("mousedown",start);
+canvas.addEventListener("mouseup",end);
+canvas.addEventListener("mousemove",draw);
+
+canvas.addEventListener("touchstart",start);
+canvas.addEventListener("touchend",end);
+canvas.addEventListener("touchmove",draw);
+
+function clearSign(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+}
+
+function saveLog(){
+
+let subject=document.getElementById("subject").value;
+let discussion=document.getElementById("discussion").value;
+
+if(subject==""||discussion==""){
+alert("Fill subject and discussion");
+return;
+}
+
+let membersAtt=[];
+
+document.querySelectorAll("#memberChecks input:checked")
+.forEach(c=>membersAtt.push(c.value));
+
+let signData=canvas.toDataURL();
+
+let date=new Date().toLocaleString();
+
+logs.push({
+subject,
+discussion,
+membersAtt,
+signData,
+date
+});
+
+localStorage.setItem("logs",JSON.stringify(logs));
+
+location.reload();
+
+}
+
+
+function displayLogs(){
+
+let div=document.getElementById("logs");
+
+div.innerHTML="";
+
+logs.forEach((l,i)=>{
+
+div.innerHTML+=`
+
+<div class="logCard">
+
+<b>Date:</b> ${l.date}<br>
+<b>Subject:</b> ${l.subject}<br>
+<b>Discussion:</b> ${l.discussion}<br>
+<b>Members:</b> ${l.membersAtt.join(", ")}
+
+<img src="${l.signData}" width="120">
+
+<button onclick="editLog(${i})">Edit</button>
+<button onclick="deleteLog(${i})">Delete</button>
+<button onclick="downloadPDF(${i})">Download PDF</button>
+
+</div>
+
+`;
+
+});
+
+}
+
+displayLogs();
+
+function editLog(i){
+
+let log=logs[i];
+
+subject.value=log.subject;
+discussion.value=log.discussion;
+
+document.querySelectorAll("#memberChecks input").forEach(c=>{
+c.checked=log.membersAtt.includes(c.value);
+});
+
+logs.splice(i,1);
+
+localStorage.setItem("logs",JSON.stringify(logs));
+
+window.scrollTo({top:0,behavior:"smooth"});
+
+}
+
+function deleteLog(i){
+
+if(confirm("Delete this visit?")){
+
+logs.splice(i,1);
+
+localStorage.setItem("logs",JSON.stringify(logs));
+
+location.reload();
+
+}
+
+}
+
+function downloadPDF(i){
+
+const {jsPDF}=window.jspdf;
+
+let l=logs[i];
+
+let pdf=new jsPDF();
+
+pdf.text("Project Guide Visit Log",10,10);
+pdf.text("Date: "+l.date,10,20);
+pdf.text("Subject: "+l.subject,10,30);
+pdf.text("Discussion: "+l.discussion,10,40);
+pdf.text("Members: "+l.membersAtt.join(", "),10,50);
+
+pdf.addImage(l.signData,"PNG",10,60,80,40);
+
+pdf.save("Visit_"+(i+1)+".pdf");
+
+}
+
+function downloadAllPDF(){
+
+const {jsPDF}=window.jspdf;
+
+let pdf=new jsPDF();
+
+logs.forEach((l,i)=>{
+
+pdf.text("Visit "+(i+1),10,10);
+pdf.text("Date:"+l.date,10,20);
+pdf.text("Subject:"+l.subject,10,30);
+pdf.text("Discussion:"+l.discussion,10,40);
+
+pdf.addPage();
+
+});
+
+pdf.save("Project_Log.pdf");
+
+}
+
+function updateDashboard(){
+
+totalVisits.innerText=logs.length;
+totalMembers.innerText=members.filter(m=>m).length;
+lastVisit.innerText=logs.length?logs[logs.length-1].date:"None";
+
+}
+
+updateDashboard();
+
+function resetAll(){
+
+if(confirm("Reset everything?")){
+
+localStorage.clear();
+location.reload();
+
+}
+
+}
+
+function toggleDark(){
+
+document.body.classList.toggle("dark");
+
+}
+
+</script>
+
+</body>
+</html>
+```
+		    
