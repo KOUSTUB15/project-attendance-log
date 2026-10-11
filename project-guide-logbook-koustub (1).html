@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#5b4bdb">
+<meta name="description" content="Project Guide Log Book — a student project by Koustub.">
+<title>Project Guide Log Book | KOUSTUB APPS</title>
+<style>
+:root{--bg:#f4f5ff;--panel:#fff;--ink:#182039;--muted:#68718a;--line:#e3e6f3;--primary:#5b4bdb;--primary2:#8275ff;--good:#168a62;--danger:#d83d57;--shadow:0 14px 40px #24265c12}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:radial-gradient(circle at 10% 0%,#e4e0ff 0,transparent 32%),var(--bg);min-height:100vh}button,input,textarea,select{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:11px 15px;font-weight:750;transition:transform .18s,filter .18s}button:hover{filter:brightness(1.04);transform:translateY(-1px)}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #a9a1ff;outline-offset:2px}.primary{background:linear-gradient(135deg,var(--primary),var(--primary2));color:white}.soft{background:#efedff;color:#493bb9}.danger{background:#fff0f2;color:var(--danger)}.neutral{background:#edf0f8;color:#303954}.small{padding:8px 11px;font-size:.86rem}.hidden{display:none!important}
+.brand{display:flex;align-items:center;gap:12px}.brand-mark{width:46px;height:46px;border-radius:15px;background:linear-gradient(135deg,#5546d4,#9b73ff);display:grid;place-items:center;color:white;font-size:23px;box-shadow:0 8px 20px #6251d53a}.brand h1{font-size:1.1rem;margin:0}.brand p{margin:3px 0 0;color:var(--muted);font-size:.82rem}.auth-wrap{min-height:100vh;display:grid;place-items:center;padding:24px}.auth-shell{width:min(100%,950px);display:grid;grid-template-columns:1fr 1fr;background:var(--panel);border-radius:28px;overflow:hidden;box-shadow:var(--shadow);border:1px solid #ffffffb5}.auth-art{padding:42px;background:linear-gradient(145deg,#30276f,#6555e8 60%,#aa8aff);color:white;display:flex;flex-direction:column;justify-content:space-between;min-height:560px}.auth-art h2{font-size:2.15rem;line-height:1.13;margin:36px 0 12px}.auth-art p{color:#e5e1ff;line-height:1.7}.art-icon{font-size:64px}.feature-pill{display:inline-block;background:#ffffff20;border:1px solid #ffffff35;padding:8px 11px;border-radius:99px;margin:5px 5px 0 0;font-size:.82rem}.auth-form{padding:42px;align-self:center}.auth-form h2{margin:0 0 8px;font-size:1.65rem}.sub{color:var(--muted);line-height:1.5;margin:0 0 22px}.field{margin:14px 0}.field label{display:block;font-weight:750;font-size:.88rem;margin-bottom:7px}.field input,.field textarea,.field select,.searchbox{width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:12px;background:#fbfbff;color:var(--ink)}.field textarea{min-height:100px;resize:vertical}.field input[type=checkbox]{width:auto}.auth-form .primary{width:100%;margin-top:8px}.password-wrap{position:relative}.password-wrap input{padding-right:52px!important}.password-toggle{position:absolute;right:6px;top:50%;transform:translateY(-50%);padding:7px 9px;background:transparent;color:#6555d9;font-size:.82rem;border-radius:8px}.password-toggle:hover{transform:translateY(-50%)}.forgot-row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:13px 0 4px}.auth-kicker{font-size:.75rem;font-weight:850;letter-spacing:.12em;color:#6a5be7;text-transform:uppercase;margin-bottom:9px}.auth-switch{text-align:center;color:var(--muted);margin-top:17px;font-size:.9rem}.linkbtn{background:none;color:var(--primary);padding:0}.hint{font-size:.78rem;color:var(--muted);line-height:1.5}.app{max-width:1180px;margin:auto;padding:22px 18px 80px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}.top-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.user-chip{padding:8px 12px;background:#fff;border:1px solid var(--line);border-radius:999px;font-size:.85rem;font-weight:750}.tabs{display:flex;gap:8px;overflow-x:auto;padding:5px;margin:0 0 18px;background:#e9e8fa;border-radius:15px}.tab{background:transparent;color:#646b86;white-space:nowrap;flex:1}.tab.active{background:white;color:var(--primary);box-shadow:0 4px 14px #35307912}.hero{background:linear-gradient(120deg,#39307e,#6857e7 65%,#8d77fa);color:white;padding:25px;border-radius:22px;display:flex;justify-content:space-between;gap:20px;align-items:center;box-shadow:0 15px 30px #4f42bd22}.hero h2{margin:0 0 8px;font-size:1.55rem}.hero p{margin:0;color:#e5e2ff;line-height:1.5}.hero .hero-emoji{font-size:58px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:16px 0}.stat,.card{background:var(--panel);border:1px solid #e6e8f5;border-radius:18px;box-shadow:var(--shadow)}.stat{padding:17px}.stat .label{color:var(--muted);font-size:.82rem;font-weight:700}.stat strong{display:block;font-size:1.7rem;margin-top:7px}.stat .symbol{float:right;background:#efedff;color:var(--primary);padding:8px;border-radius:11px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.card{padding:20px;margin:15px 0}.card h3{margin:0 0 14px;font-size:1.08rem}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.member-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.member-row{display:flex;gap:8px;align-items:center}.member-row input{min-width:0;flex:1}.attendee{display:flex;align-items:center;gap:8px;padding:9px 11px;border:1px solid var(--line);border-radius:10px;margin:7px 0;background:#fbfbff}.attendee input{width:auto}.signature{width:100%;height:150px;display:block;border:2px dashed #c9c7e7;border-radius:13px;background:white;touch-action:none}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.log-card{padding:16px;border:1px solid var(--line);border-radius:15px;margin-top:12px;background:#fff}.log-meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:.8rem;margin-bottom:9px}.tag{background:#efedff;color:#4e40bf;padding:5px 8px;border-radius:99px;font-weight:750}.log-card h4{margin:6px 0 8px;font-size:1.02rem}.log-card p{white-space:pre-wrap;line-height:1.55;margin:0 0 9px;color:#414b66}.empty{text-align:center;padding:32px 12px;color:var(--muted)}.empty .emoji{font-size:35px}.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin:12px 0}.toolbar input{flex:1;min-width:180px}.notice{padding:12px 14px;border-radius:12px;background:#f0fff8;color:#176b50;border:1px solid #c8f1df;font-size:.88rem;line-height:1.5}.foot{text-align:center;color:var(--muted);font-size:.82rem;padding:20px}.toast{position:fixed;top:18px;left:50%;transform:translateX(-50%);background:#191d35;color:#fff;padding:12px 17px;border-radius:12px;box-shadow:var(--shadow);z-index:20;max-width:90vw}.dark{--bg:#111427;--panel:#1c2038;--ink:#f3f4ff;--muted:#aeb5d0;--line:#343a59;--shadow:0 14px 40px #0002}.dark .stat,.dark .card,.dark .user-chip,.dark .log-card{border-color:var(--line)}.dark .field input,.dark .field textarea,.dark .field select,.dark .searchbox,.dark .attendee{background:#242943;color:var(--ink);border-color:var(--line)}.dark .tabs{background:#252943}.dark .tab.active{background:#353958}.dark .soft{background:#36315e;color:#dcd7ff}.dark .neutral{background:#343951;color:#f3f4ff}.dark .log-card p{color:#d2d7ec}.dark .log-card{background:#1c2038}
+/* Project profile setup and theme motion */
+body,.auth-shell,.card,.stat,.tabs,.user-chip,.log-card,.field input,.field textarea,.field select{transition:background-color .35s ease,color .3s ease,border-color .3s ease,box-shadow .35s ease}
+body{background-size:140% 140%;animation:ambientGlow 18s ease-in-out infinite alternate}
+@keyframes ambientGlow{0%{background-position:0% 0%}100%{background-position:100% 100%}}
+.page:not(.hidden){animation:pageEnter .38s cubic-bezier(.2,.75,.25,1) both}
+@keyframes pageEnter{from{opacity:0;transform:translateY(9px) scale(.995)}to{opacity:1;transform:translateY(0) scale(1)}}
+#themeBtn{position:relative;overflow:hidden;transition:transform .28s ease,background .3s ease,color .3s ease}
+#themeBtn:active{transform:rotate(-8deg) scale(.95)}
+.dark{background:radial-gradient(circle at 15% 0%,#29224e 0,transparent 35%),radial-gradient(circle at 100% 100%,#172e48 0,transparent 30%),var(--bg);background-size:140% 140%;animation:ambientGlow 18s ease-in-out infinite alternate}
+.setup-wrap{min-height:100vh;display:grid;place-items:center;padding:22px;background:radial-gradient(circle at 5% 0%,#e4e0ff 0,transparent 34%),var(--bg)}
+.setup-shell{width:min(100%,760px);background:var(--panel);border:1px solid #ffffffb5;border-radius:26px;padding:clamp(22px,5vw,42px);box-shadow:var(--shadow);animation:pageEnter .45s ease both}
+.setup-shell h2{margin:0 0 8px;font-size:clamp(1.45rem,4vw,2rem)}
+.setup-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 15px}
+.profile-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.profile-item{padding:13px;border:1px solid var(--line);border-radius:13px;background:color-mix(in srgb,var(--panel) 88%,var(--primary) 12%);min-width:0}
+.profile-item span{display:block;font-size:.78rem;color:var(--muted);font-weight:750;margin-bottom:5px}
+.profile-item strong{overflow-wrap:anywhere}
+@media(max-width:600px){.setup-grid{grid-template-columns:1fr}.profile-summary{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.auth-shell{grid-template-columns:1fr;max-width:500px}.auth-art{min-height:auto;padding:25px}.auth-art h2{font-size:1.7rem;margin:18px 0 8px}.auth-art .art-icon{font-size:40px}.auth-form{padding:27px}.stats{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.hero{padding:20px}.hero .hero-emoji{font-size:42px}.app{padding:15px 12px 85px}.member-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div id="toast" class="toast hidden" role="status"></div>
+<div id="authScreen" class="auth-wrap">
+ <div class="auth-shell">
+  <div class="auth-art">
+   <div><div class="brand"><div class="brand-mark">📘</div><div><h1>Project Guide Log Book</h1><p style="color:#e3deff">A student project by Koustub</p></div></div>
+   <h2>Every project meeting, organised.</h2><p>Record guide visits, track discussion points, manage team attendance, capture signatures and keep your project journey in one place.</p>
+   <span class="feature-pill">✓ Visit history</span><span class="feature-pill">✓ Team tracking</span><span class="feature-pill">✓ PDF & backup</span></div>
+   <div><p style="font-size:.83rem">Created with care by <b>KOUSTUB APPS</b></p></div>
+  </div>
+  <div class="auth-form">
+   <div id="loginPane">
+    <div class="auth-kicker">PROJECT GUIDE LOG BOOK</div><h2>Login to Your Account</h2><p class="sub">Welcome back! Enter your details to continue.</p>
+    <form id="loginForm">
+     <div class="field"><label for="loginUser">Email or Username</label><input id="loginUser" autocomplete="username" required placeholder="Enter your email or username"></div>
+     <div class="field"><label for="loginPass">Password</label><div class="password-wrap"><input id="loginPass" type="password" autocomplete="current-password" required placeholder="Enter your password"><button class="password-toggle" type="button" data-toggle-password="loginPass" aria-label="Show password">Show</button></div></div>
+     <div class="forgot-row"><label class="hint"><input id="remember" type="checkbox"> Remember me</label><button class="linkbtn" type="button" id="forgotPassword">Forgot Password?</button></div>
+     <button class="primary" type="submit">Login →</button>
+    </form>
+    <div class="auth-switch">New here? <button class="linkbtn" id="showRegister">Create an account</button></div>
+   </div>
+   <div id="registerPane" class="hidden">
+    <h2>Create your account</h2><p class="sub">Set up a local account for this browser.</p>
+    <form id="registerForm">
+     <div class="field"><label for="regName">Full name</label><input id="regName" required maxlength="60" autocomplete="name" placeholder="Your name"></div>
+     <div class="field"><label for="regUser">Username</label><input id="regUser" required minlength="3" maxlength="40" autocomplete="username" placeholder="Choose a username"></div>
+     <div class="field"><label for="regEmail">Email (optional)</label><input id="regEmail" type="email" autocomplete="email" placeholder="you@example.com"></div>
+     <div class="field"><label for="regPass">Password (minimum 6 characters)</label><div class="password-wrap"><input id="regPass" type="password" minlength="6" required autocomplete="new-password" placeholder="Create a password"><button class="password-toggle" type="button" data-toggle-password="regPass" aria-label="Show password">Show</button></div></div>
+     <button class="primary" type="submit">Create Account</button>
+    </form>
+    <div class="auth-switch">Already registered? <button class="linkbtn" id="showLogin">Back to login</button></div>
+   </div>
+   <p class="hint" style="margin-top:24px">Demo / frontend-only version: accounts and logs are saved in this browser only. Do not use a password you use elsewhere.</p>
+  </div>
+ </div>
+</div>
+<div id="setupScreen" class="setup-wrap hidden">
+ <div class="setup-shell">
+  <div class="brand" style="margin-bottom:25px"><div class="brand-mark">🎓</div><div><h1>Student Project Setup</h1><p>Project Guide Log Book · KOUSTUB APPS</p></div></div>
+  <div class="auth-kicker">ONE-TIME SETUP</div><h2>Tell us about your project</h2>
+  <p class="sub" id="setupIntro">Enter your project details once. You can update them later from your dashboard.</p>
+  <form id="profileForm">
+   <div class="setup-grid">
+    <div class="field"><label for="projectName">Project name *</label><input id="projectName" required maxlength="160" placeholder="Enter your project title"></div>
+    <div class="field"><label for="collegeName">College name *</label><input id="collegeName" required maxlength="180" placeholder="Enter your college name"></div>
+    <div class="field"><label for="semester">Semester *</label><select id="semester" required><option value="">Select semester</option><option>1st Semester</option><option>2nd Semester</option><option>3rd Semester</option><option>4th Semester</option><option>5th Semester</option><option>6th Semester</option><option>7th Semester</option><option>8th Semester</option><option>Other</option></select></div>
+    <div class="field"><label for="teamNames">Team members' names *</label><textarea id="teamNames" required maxlength="1000" placeholder="Enter one name per line&#10;Example:&#10;Student One&#10;Student Two"></textarea><p class="hint">Enter one student name per line. You can add up to 8 team members.</p></div>
+   </div>
+   <div class="actions"><button id="saveProfileBtn" class="primary" type="submit">Save details and continue →</button><button id="cancelProfileEdit" class="neutral hidden" type="button">Cancel</button></div>
+  </form>
+  <p class="hint" style="margin-top:18px">Your profile is saved in this browser for this account. Use the same browser and device to access local data.</p>
+ </div>
+</div>
+<div id="appScreen" class="app hidden">
+ <div class="topbar">
+  <div class="brand"><div class="brand-mark">📘</div><div><h1>Project Guide Log Book</h1><p>Plan • Record • Reflect</p></div></div>
+  <div class="top-actions"><span class="user-chip">👤 <span id="welcomeName">Student</span></span><button id="themeBtn" class="neutral small" title="Toggle dark mode">🌙 Theme</button><button id="logoutBtn" class="danger small">Log out</button></div>
+ </div>
+ <nav class="tabs" aria-label="Main navigation">
+  <button class="tab active" data-tab="home">🏠 Overview</button><button class="tab" data-tab="visit">✍️ Add Visit</button><button class="tab" data-tab="history">🗂️ Visit History</button><button class="tab" data-tab="team">👥 Team</button><button class="tab" data-tab="settings">⚙️ Settings & Backup</button>
+ </nav>
+ <section id="homePage" class="page">
+  <div class="card" id="profileCard">
+   <div class="section-head"><h3>🎓 My Project Profile</h3><button class="soft small" id="editProfileBtn">✏️ Edit details</button></div>
+   <div class="profile-summary"><div class="profile-item"><span>PROJECT NAME</span><strong id="dashProjectName">Not set</strong></div><div class="profile-item"><span>COLLEGE</span><strong id="dashCollegeName">Not set</strong></div><div class="profile-item"><span>SEMESTER</span><strong id="dashSemester">Not set</strong></div><div class="profile-item"><span>TEAM MEMBERS</span><strong id="dashTeamNames">Not set</strong></div></div>
+  </div>
+  <div class="hero"><div><h2>Your project, in progress.</h2><p>Keep every guide meeting, action point and team update documented.<br>Small steps recorded today make a stronger final report.</p><div class="actions"><button class="primary" id="quickAdd">＋ Record a visit</button><button class="soft" id="quickHistory">View history</button></div></div><div class="hero-emoji">🎓</div></div>
+  <div class="stats"><div class="stat"><span class="symbol">🗓️</span><span class="label">Total visits</span><strong id="statVisits">0</strong></div><div class="stat"><span class="symbol">👥</span><span class="label">Team members</span><strong id="statMembers">0</strong></div><div class="stat"><span class="symbol">☑️</span><span class="label">Attendance entries</span><strong id="statAttendance">0</strong></div><div class="stat"><span class="symbol">⏱️</span><span class="label">Latest visit</span><strong id="statLatest" style="font-size:1rem;margin-top:12px">None yet</strong></div></div>
+  <div class="grid2"><div class="card"><div class="section-head"><h3>Recent visits</h3><button class="soft small" data-go="history">See all</button></div><div id="recentLogs"></div></div><div class="card"><h3>Project workflow tips</h3><p>📌 Write the meeting topic and decisions clearly.</p><p>🧑‍🤝‍🧑 Tick only the students who attended.</p><p>✍️ Capture the guide signature when appropriate.</p><p>📤 Export a backup regularly before changing devices.</p><div class="notice">Your records stay in this browser's local storage. Clearing browser data may erase them.</div></div></div>
+ </section>
+ <section id="visitPage" class="page hidden">
+  <div class="card"><div class="section-head"><h3 id="visitFormTitle">✍️ Record a guide visit</h3><span class="tag">Visit entry</span></div>
+   <form id="visitForm">
+    <div class="field"><label for="visitDate">Meeting date and time</label><input id="visitDate" type="datetime-local" required></div>
+    <div class="field"><label for="subject">Topic / agenda discussed *</label><input id="subject" required maxlength="180" placeholder="e.g. Review of problem statement"></div>
+    <div class="field"><label for="discussion">Discussion, decisions and feedback *</label><textarea id="discussion" required maxlength="10000" placeholder="Write the important points, guide suggestions, decisions and next steps..."></textarea></div>
+    <div class="field"><label for="actionPoints">Action items / next steps</label><textarea id="actionPoints" maxlength="5000" placeholder="1. Update the synopsis&#10;2. Collect feedback from users"></textarea></div>
+    <div class="field"><label>Team members attended</label><div id="memberChecks"><p class="hint">Add your team members in the Team tab first.</p></div></div>
+    <div class="field"><label>Guide signature (optional)</label><canvas id="sign" class="signature" aria-label="Signature drawing area"></canvas><div class="actions"><button type="button" id="clearSign" class="neutral small">Clear signature</button><span class="hint">Draw with mouse or finger.</span></div></div>
+    <div class="actions"><button class="primary" type="submit" id="saveVisitBtn">Save visit</button><button class="neutral" type="button" id="cancelEdit">Clear form</button></div>
+   </form>
+  </div>
+ </section>
+ <section id="historyPage" class="page hidden">
+  <div class="card"><div class="section-head"><h3>🗂️ Visit history</h3><div class="actions" style="margin-top:0;align-items:center"><span class="tag" id="historyCount">0 records</span><button id="shareAllVisits" class="soft small" type="button">↗ Share all visits</button></div></div><div class="toolbar"><input id="searchLogs" class="searchbox" placeholder="Search topic, discussion, member or action item…"><select id="sortLogs" class="searchbox" style="max-width:190px"><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></div><div id="logs"></div></div>
+ </section>
+ <section id="teamPage" class="page hidden">
+  <div class="card"><h3>👥 Project team</h3><p class="sub">Add or update the names used for attendance. Blank fields are ignored.</p><form id="teamForm"><div id="memberInputs" class="member-grid"></div><div class="actions"><button class="primary" type="submit">Save team members</button></div></form></div>
+ </section>
+ <section id="settingsPage" class="page hidden">
+  <div class="card"><h3>📦 Export & backup</h3><p class="sub">Download a copy of your records so you can keep them safe or move them to another browser.</p><div class="actions"><button id="exportJson" class="primary">Download full backup (.json)</button><button id="exportCsv" class="soft">Export visits (.csv)</button><button id="importBtn" class="neutral">Restore backup (.json)</button><input id="importFile" class="hidden" type="file" accept="application/json,.json"></div><p class="hint">Restoring a backup replaces this account's current project records. Export first if you want to keep both.</p></div>
+  <div class="card"><h3>📄 PDF reports</h3><p class="sub">Create a PDF of all visits or a single visit. An internet connection may be needed for the PDF library.</p><button id="fullPdf" class="primary">Download full project PDF</button></div>
+  <div class="card"><h3>🔐 Account</h3><p id="accountInfo" class="sub"></p><button id="changePassword" class="neutral">Change password</button> <button id="deleteAccount" class="danger">Delete local account</button></div>
+  <div class="card"><h3>🧹 Reset project records</h3><p class="sub">This permanently clears the current account's team and visit entries in this browser.</p><button id="resetData" class="danger">Reset project data</button></div>
+  <div class="card"><h3>About this app</h3><p><b>Project Guide Log Book</b> is a student project created by <b>Koustub</b>.</p><p class="hint">This is a frontend-only version, so authentication is for basic demonstration and is not secure against a determined user.</p></div>
+ </section>
+ <div class="foot">Made for students · Project Guide Log Book · <b>KOUSTUB APPS</b></div>
+</div>
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const KEYS={users:"pgl_users_v2",session:"pgl_session_v2",remember:"pgl_remember_v2",theme:"pgl_theme_v2"};
+let currentUser=null, members=["","","",""], logs=[], editingId=null, signatureDirty=false, drawing=false, lastPoint=null;
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,8);
+function safeParse(value,fallback){try{return value?JSON.parse(value):fallback}catch{return fallback}}
+function getUsers(){return safeParse(localStorage.getItem(KEYS.users),{})}
+function userKey(){return currentUser?"pgl_data_v2_"+currentUser.username.toLowerCase():""}
+function profileKey(){return currentUser?"pgl_profile_v1_"+currentUser.username.toLowerCase():""}
+function getProfile(){return safeParse(localStorage.getItem(profileKey()),null)}
+function saveData(){if(!currentUser)return;localStorage.setItem(userKey(),JSON.stringify({members,logs}))}
+function loadData(){const d=safeParse(localStorage.getItem(userKey()),{});members=Array.isArray(d.members)?d.members.slice(0,8):["","","",""];while(members.length<4)members.push("");logs=Array.isArray(d.logs)?d.logs:[]}
+function toast(msg){const t=$("toast");t.textContent=msg;t.classList.remove("hidden");clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.classList.add("hidden"),2800)}
+function escapeHtml(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function showAuth(mode){$("authScreen").classList.remove("hidden");$("setupScreen").classList.add("hidden");$("appScreen").classList.add("hidden");$("loginPane").classList.toggle("hidden",mode==="register");$("registerPane").classList.toggle("hidden",mode!=="register");if(mode==="login")setTimeout(()=>$ ("loginUser").focus(),0)}
+function enterApp(user){currentUser=user;loadData();$("welcomeName").textContent=user.name||user.username;$("accountInfo").textContent=`Signed in as ${user.name} (${user.username}). Account data is stored locally in this browser.`;$("authScreen").classList.add("hidden");applyTheme();const profile=getProfile();if(!profile){$("appScreen").classList.add("hidden");$("setupScreen").classList.remove("hidden");$("setupIntro").textContent="Complete this one-time setup to personalize your dashboard. You can edit these details later.";$("saveProfileBtn").textContent="Save details and continue →";$("cancelProfileEdit").classList.add("hidden");$("profileForm").reset();window.scrollTo({top:0,behavior:"smooth"});return}$("setupScreen").classList.add("hidden");$("appScreen").classList.remove("hidden");renderProfile(profile);renderTeamInputs();renderAll();resetVisitForm();showTab("home")}
+function renderProfile(profile=getProfile()){if(!profile)return;$("dashProjectName").textContent=profile.projectName||"Not set";$("dashCollegeName").textContent=profile.collegeName||"Not set";$("dashSemester").textContent=profile.semester||"Not set";$("dashTeamNames").textContent=(profile.teamNames||[]).join(", ")||"Not set"}
+function editProfile(){const profile=getProfile();if(!profile)return;$("projectName").value=profile.projectName||"";$("collegeName").value=profile.collegeName||"";$("semester").value=profile.semester||"";$("teamNames").value=(profile.teamNames||[]).join("\n");$("setupIntro").textContent="Update your project information below. Your visit records will remain unchanged.";$("saveProfileBtn").textContent="Save changes";$("cancelProfileEdit").classList.remove("hidden");$("appScreen").classList.add("hidden");$("setupScreen").classList.remove("hidden");window.scrollTo({top:0,behavior:"smooth"})}
+$("profileForm").addEventListener("submit",e=>{e.preventDefault();if(!currentUser)return;const projectName=$("projectName").value.trim(),collegeName=$("collegeName").value.trim(),semester=$("semester").value,teamNames=$("teamNames").value.split(/\n+/).map(n=>n.trim()).filter(Boolean).slice(0,8);if(!projectName||!collegeName||!semester||!teamNames.length)return toast("Please complete all project details and enter at least one team member.");const profile={projectName,collegeName,semester,teamNames,updatedAt:new Date().toISOString()};localStorage.setItem(profileKey(),JSON.stringify(profile));members=teamNames.slice();while(members.length<4)members.push("");saveData();$("setupScreen").classList.add("hidden");$("appScreen").classList.remove("hidden");renderProfile(profile);renderTeamInputs();renderAll();resetVisitForm();showTab("home");toast("Project profile saved successfully.")});
+$("editProfileBtn").addEventListener("click",editProfile);$("cancelProfileEdit").addEventListener("click",()=>{const profile=getProfile();if(profile){$("setupScreen").classList.add("hidden");$("appScreen").classList.remove("hidden");renderProfile(profile);showTab("home")}else showAuth("login")});
+function logout(){localStorage.removeItem(KEYS.session);currentUser=null;showAuth("login");toast("You have logged out.")}
+$("showRegister").onclick=()=>showAuth("register");$("showLogin").onclick=()=>showAuth("login");
+document.querySelectorAll("[data-toggle-password]").forEach(btn=>btn.addEventListener("click",()=>{const field=$(btn.dataset.togglePassword),show=field.type==="password";field.type=show?"text":"password";btn.textContent=show?"Hide":"Show";btn.setAttribute("aria-label",show?"Hide password":"Show password")}));
+$("forgotPassword").onclick=()=>{const identity=prompt("Enter your registered username or email:");if(identity===null||!identity.trim())return;const users=getUsers(),needle=identity.trim().toLowerCase(),user=Object.values(users).find(u=>u.username.toLowerCase()===needle||String(u.email||"").toLowerCase()===needle);if(!user)return toast("No account found with that username or email.");const next=prompt("Frontend demo only: enter a new password (minimum 6 characters). This reset is not email-verified.");if(next===null)return;if(next.length<6)return toast("Password must be at least 6 characters.");users[user.username.toLowerCase()].password=next;localStorage.setItem(KEYS.users,JSON.stringify(users));$("loginUser").value=user.username;toast("Password reset on this browser. Please log in.")};
+$("registerForm").addEventListener("submit",e=>{e.preventDefault();const name=$("regName").value.trim(),username=$("regUser").value.trim(),email=$("regEmail").value.trim(),password=$("regPass").value;const users=getUsers();if(username.length<3)return toast("Username must contain at least 3 characters.");if(users[username.toLowerCase()])return toast("That username is already registered.");const user={name,username,email,password,createdAt:new Date().toISOString()};users[username.toLowerCase()]=user;localStorage.setItem(KEYS.users,JSON.stringify(users));currentUser=user;localStorage.setItem(KEYS.session,username.toLowerCase());loadData();saveData();e.target.reset();enterApp(user);toast("Account created on this device.");});
+$("loginForm").addEventListener("submit",e=>{e.preventDefault();const identifier=$("loginUser").value.trim().toLowerCase(),password=$("loginPass").value,users=getUsers();const user=Object.values(users).find(u=>u.username.toLowerCase()===identifier||String(u.email||"").toLowerCase()===identifier);if(!user||user.password!==password)return toast("Login failed. Check your username/email and password.");localStorage.setItem(KEYS.session,user.username.toLowerCase());if($("remember").checked)localStorage.setItem(KEYS.remember,user.username);else localStorage.removeItem(KEYS.remember);enterApp(user);toast("Welcome back!");});
+$("logoutBtn").onclick=logout;
+function showTab(tab){document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===tab));document.querySelectorAll(".page").forEach(p=>p.classList.add("hidden"));$(tab+"Page").classList.remove("hidden");if(tab==="history")renderLogs();if(tab==="team")renderTeamInputs();window.scrollTo({top:0,behavior:"smooth"})}
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>showTab(b.dataset.tab)));
+document.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>showTab(b.dataset.go)));
+$("quickAdd").onclick=()=>{resetVisitForm();showTab("visit")};$("quickHistory").onclick=()=>showTab("history");
+function renderTeamInputs(){$("memberInputs").innerHTML=members.map((m,i)=>`<div class="member-row"><label class="hint" for="member${i+1}">Member ${i+1}</label><input id="member${i+1}" maxlength="70" value="${escapeHtml(m)}" placeholder="Student name"></div>`).join("")}
+$("teamForm").addEventListener("submit",e=>{e.preventDefault();members=members.map((_,i)=>$(`member${i+1}`)?.value.trim()||"");while(members.length<4)members.push("");saveData();renderAll();toast("Team members saved.")});
+function renderChecks(selected=[]){const names=members.filter(Boolean);$("memberChecks").innerHTML=names.length?names.map(m=>`<label class="attendee"><input type="checkbox" value="${escapeHtml(m)}" ${selected.includes(m)?"checked":""}> ${escapeHtml(m)}</label>`).join(""):'<p class="hint">Add your team members in the Team tab first.</p>'}
+function resizeCanvas(){const c=$("sign");if(!c)return;const rect=c.getBoundingClientRect();if(!rect.width)return;const old=c.toDataURL();const dpr=window.devicePixelRatio||1;c.width=Math.round(rect.width*dpr);c.height=Math.round(150*dpr);const ctx=c.getContext("2d");ctx.setTransform(dpr,0,0,dpr,0,0);ctx.lineWidth=2.4;ctx.lineCap="round";ctx.lineJoin="round";ctx.strokeStyle="#27224c";if(signatureDirty){const img=new Image();img.onload=()=>ctx.drawImage(img,0,0,rect.width,150);img.src=old}}
+function clearSignature(){const c=$("sign");c.getContext("2d").clearRect(0,0,c.width,c.height);signatureDirty=false}
+function pointerPos(e){const r=$("sign").getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}}
+$("sign").addEventListener("pointerdown",e=>{drawing=true;signatureDirty=true;$("sign").setPointerCapture(e.pointerId);lastPoint=pointerPos(e)});
+$("sign").addEventListener("pointermove",e=>{if(!drawing)return;const p=pointerPos(e),ctx=$("sign").getContext("2d");ctx.beginPath();ctx.moveTo(lastPoint.x,lastPoint.y);ctx.lineTo(p.x,p.y);ctx.stroke();lastPoint=p});
+["pointerup","pointercancel","lostpointercapture"].forEach(ev=>$("sign").addEventListener(ev,()=>{drawing=false;lastPoint=null}));
+$("clearSign").onclick=clearSignature;
+function resetVisitForm(){editingId=null;$("visitForm").reset();$("visitFormTitle").textContent="✍️ Record a guide visit";$("saveVisitBtn").textContent="Save visit";$("visitDate").value=new Date(Date.now()-new Date().getTimezoneOffset()*60000).toISOString().slice(0,16);renderChecks();clearSignature()}
+$("cancelEdit").onclick=()=>{resetVisitForm();toast("Form cleared.")};
+$("visitForm").addEventListener("submit",e=>{e.preventDefault();const subject=$("subject").value.trim(),discussion=$("discussion").value.trim();if(!subject||!discussion)return toast("Please complete the topic and discussion.");const attended=[...document.querySelectorAll("#memberChecks input:checked")].map(c=>c.value);const old=logs.find(l=>l.id===editingId);const log={id:editingId||uid(),date:$("visitDate").value?new Date($("visitDate").value).toISOString():new Date().toISOString(),subject,discussion,actionPoints:$("actionPoints").value.trim(),membersAtt:attended,signData:signatureDirty? $("sign").toDataURL("image/png"):(old?.signData||""),updatedAt:new Date().toISOString()};if(editingId)logs=logs.map(l=>l.id===editingId?log:l);else logs.push(log);saveData();renderAll();resetVisitForm();showTab("history");toast(editingId?"Visit updated.":"Visit saved successfully.")});
+function fmtDate(value){const d=new Date(value);return isNaN(d)?String(value||"Unknown date"):d.toLocaleString([], {dateStyle:"medium",timeStyle:"short"})}
+function logMarkup(l){return `<article class="log-card"><div class="log-meta"><span class="tag">${escapeHtml(fmtDate(l.date))}</span><span>${(l.membersAtt||[]).length} attended</span></div><h4>${escapeHtml(l.subject)}</h4><p>${escapeHtml(l.discussion)}</p>${l.actionPoints?`<p><b>Next steps:</b><br>${escapeHtml(l.actionPoints)}</p>`:""}<p><b>Attended:</b> ${escapeHtml((l.membersAtt||[]).join(", ")||"Not recorded")}</p>${l.signData?`<details><summary class="hint">View guide signature</summary><img src="${l.signData}" alt="Guide signature" style="max-width:190px;max-height:90px;object-fit:contain;background:white;border:1px solid #ddd;border-radius:8px;margin-top:8px"></details>`:""}<div class="actions"><button class="soft small" data-edit="${l.id}">Edit</button><button class="soft small" data-share="${l.id}">↗ Share visit</button><button class="neutral small" data-pdf="${l.id}">Download PDF</button><button class="danger small" data-delete="${l.id}">Delete</button></div></article>`}
+function renderLogs(){const q=$("searchLogs").value.trim().toLowerCase(),order=$("sortLogs").value;let filtered=logs.filter(l=>[l.subject,l.discussion,l.actionPoints,(l.membersAtt||[]).join(" ")].join(" ").toLowerCase().includes(q));filtered.sort((a,b)=>order==="newest"?new Date(b.date)-new Date(a.date):new Date(a.date)-new Date(b.date));$("historyCount").textContent=`${filtered.length} record${filtered.length===1?"":"s"}`;$("logs").innerHTML=filtered.length?filtered.map(logMarkup).join(""):'<div class="empty"><div class="emoji">🗒️</div><b>No visits found</b><p>Record a visit or change your search.</p><button class="primary" onclick="showTab(&quot;visit&quot;)">Add first visit</button></div>'; }
+$("searchLogs").addEventListener("input",renderLogs);$("sortLogs").addEventListener("change",renderLogs);$("shareAllVisits").addEventListener("click",shareAllVisits);
+$("logs").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const id=b.dataset.edit||b.dataset.delete||b.dataset.pdf||b.dataset.share;if(!id)return;const l=logs.find(x=>x.id===id);if(!l)return;if(b.dataset.edit){editingId=id;$("visitFormTitle").textContent="✏️ Edit visit";$("saveVisitBtn").textContent="Update visit";$("visitDate").value=new Date(new Date(l.date).getTime()-new Date(l.date).getTimezoneOffset()*60000).toISOString().slice(0,16);$("subject").value=l.subject;$("discussion").value=l.discussion;$("actionPoints").value=l.actionPoints||"";renderChecks(l.membersAtt||[]);clearSignature();if(l.signData){const img=new Image();img.onload=()=>{const c=$("sign"),ctx=c.getContext("2d"),r=c.getBoundingClientRect(),scale=c.width/(r.width||1);ctx.drawImage(img,0,0,r.width*scale,150*scale);signatureDirty=false};img.src=l.signData}showTab("visit")}else if(b.dataset.delete){if(confirm("Delete this visit permanently?")){logs=logs.filter(x=>x.id!==id);saveData();renderAll();toast("Visit deleted.")}}else if(b.dataset.pdf)downloadOnePdf(l);else if(b.dataset.share)shareVisit(l)});
+function renderAll(){renderChecks();renderLogs();const attended=logs.reduce((n,l)=>n+(l.membersAtt||[]).length,0);$("statVisits").textContent=logs.length;$("statMembers").textContent=members.filter(Boolean).length;$("statAttendance").textContent=attended;$("statLatest").textContent=logs.length?new Date(logs.slice().sort((a,b)=>new Date(b.date)-new Date(a.date))[0].date).toLocaleDateString():"None yet";const recent=logs.slice().sort((a,b)=>new Date(b.date)-new Date(a.date)).slice(0,3);$("recentLogs").innerHTML=recent.length?recent.map(l=>`<div class="log-card"><div class="log-meta">${escapeHtml(fmtDate(l.date))}</div><b>${escapeHtml(l.subject)}</b><p>${escapeHtml(l.discussion.slice(0,150))}${l.discussion.length>150?"…":""}</p></div>`).join(""):'<div class="empty"><div class="emoji">🚀</div><b>No visits yet</b><p>Your first guide meeting can be recorded here.</p></div>'}
+function csvEscape(v){return '"'+String(v??"").replace(/"/g,'""')+'"'}
+function downloadFile(name,content,type){const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+$("exportJson").onclick=()=>{downloadFile("project-guide-backup.json",JSON.stringify({app:"Project Guide Log Book",version:2,exportedAt:new Date().toISOString(),members,logs},null,2),"application/json");toast("Backup downloaded.")};
+$("exportCsv").onclick=()=>{const rows=[["Date","Topic","Discussion","Action items","Members attended"],...logs.map(l=>[fmtDate(l.date),l.subject,l.discussion,l.actionPoints,(l.membersAtt||[]).join("; ")])];downloadFile("project-visits.csv",rows.map(r=>r.map(csvEscape).join(",")).join("\r\n"),"text/csv;charset=utf-8");toast("CSV exported.")};
+$("importBtn").onclick=()=>$("importFile").click();
+$("importFile").addEventListener("change",async e=>{const file=e.target.files[0];if(!file)return;try{const data=JSON.parse(await file.text());if(!Array.isArray(data.logs)||!Array.isArray(data.members))throw Error("Invalid backup");if(!confirm("Replace current team and visits with this backup?"))return;members=data.members.slice(0,8);logs=data.logs;saveData();renderTeamInputs();renderAll();toast("Backup restored.")}catch{toast("Could not restore. Choose a valid backup JSON file.")}finally{e.target.value=""}});
+function loadPdfLib(){return new Promise((resolve,reject)=>{if(window.jspdf){resolve(window.jspdf.jsPDF);return}const s=document.createElement("script");s.src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js";s.onload=()=>window.jspdf?resolve(window.jspdf.jsPDF):reject();s.onerror=reject;document.head.appendChild(s)})}
+async function makePdf(list){try{const JsPDF=await loadPdfLib(),pdf=new JsPDF();let y=18;pdf.setFontSize(17);pdf.text("Project Guide Visit Log",14,y);y+=10;pdf.setFontSize(10);pdf.text("Created by KOUSTUB APPS",14,y);y+=9;for(let i=0;i<list.length;i++){const l=list[i];if(y>255){pdf.addPage();y=18}pdf.setFontSize(12);const head=pdf.splitTextToSize(`${i+1}. ${l.subject}`,180);pdf.text(head,14,y);y+=head.length*6;pdf.setFontSize(9);const lines=pdf.splitTextToSize(`Date: ${fmtDate(l.date)}\\nDiscussion: ${l.discussion}\\nAction items: ${l.actionPoints||"None"}\\nMembers: ${(l.membersAtt||[]).join(", ")||"Not recorded"}`,180);for(const line of lines){if(y>278){pdf.addPage();y=18}pdf.text(line,14,y);y+=4.7}if(l.signData){try{if(y>235){pdf.addPage();y=18}pdf.addImage(l.signData,"PNG",14,y,45,18);y+=22}catch{}}y+=8}pdf.save("Project_Guide_Log_Book.pdf");toast("PDF downloaded.")}catch{toast("PDF library unavailable. Check your internet connection and try again.")}}
+function shareVisit(l){
+ const profile=getProfile()||{};
+ const text=[
+  `PROJECT GUIDE VISIT — ${profile.projectName||"Student Project"}`,
+  `College: ${profile.collegeName||"Not provided"}`,
+  `Semester: ${profile.semester||"Not provided"}`,
+  `Date: ${fmtDate(l.date)}`,
+  `Topic: ${l.subject}`,
+  `Discussion: ${l.discussion}`,
+  `Next steps: ${l.actionPoints||"None recorded"}`,
+  `Attended: ${(l.membersAtt||[]).join(", ")||"Not recorded"}`,
+  `Shared from Project Guide Log Book · KOUSTUB APPS`
+ ].join("\n\n");
+ if(navigator.share){navigator.share({title:`Project visit: ${l.subject}`,text}).then(()=>toast("Visit shared successfully.")).catch(err=>{if(err&&err.name!=="AbortError")copyVisitText(text)});}
+ else copyVisitText(text);
+}
+function shareAllVisits(){
+ if(!logs.length){toast("There are no visits to share yet.");return}
+ const profile=getProfile()||{};
+ const text=[
+  `PROJECT GUIDE VISIT HISTORY — ${profile.projectName||"Student Project"}`,
+  `College: ${profile.collegeName||"Not provided"}`,
+  `Semester: ${profile.semester||"Not provided"}`,
+  `Team: ${(Array.isArray(profile.teamNames)?profile.teamNames:members.filter(Boolean)).join(", ")||"Not provided"}`,
+  `Total visits: ${logs.length}`,
+  ...logs.slice().sort((a,b)=>new Date(a.date)-new Date(b.date)).map((l,i)=>[
+   `${i+1}. ${l.subject}`,
+   `Date: ${fmtDate(l.date)}`,
+   `Discussion: ${l.discussion}`,
+   `Next steps: ${l.actionPoints||"None recorded"}`,
+   `Attended: ${(l.membersAtt||[]).join(", ")||"Not recorded"}`
+  ].join("\n")),
+  "Shared from Project Guide Log Book"
+ ].join("\n\n");
+ if(navigator.share){navigator.share({title:`Project visit history: ${profile.projectName||"Student Project"}`,text}).then(()=>toast("Visit history shared successfully.")).catch(err=>{if(err&&err.name!=="AbortError")copyVisitText(text)});}
+ else copyVisitText(text);
+}
+async function copyVisitText(text){try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text)}else{const area=document.createElement("textarea");area.value=text;area.style.position="fixed";area.style.opacity="0";document.body.appendChild(area);area.select();const ok=document.execCommand("copy");area.remove();if(!ok)throw Error("copy failed")}toast("Visit details copied. Paste them into WhatsApp, email, or another app to share.")}catch{downloadFile("project-visit-share.txt",text,"text/plain;charset=utf-8");toast("Sharing is unavailable here, so the visit details were downloaded as a text file.")}}
+function downloadOnePdf(l){makePdf([l])}$("fullPdf").onclick=()=>makePdf(logs);
+$("resetData").onclick=()=>{if(confirm("Delete all project records and team members for this account? This cannot be undone.")){members=["","","",""];logs=[];saveData();renderTeamInputs();renderAll();resetVisitForm();toast("Project records reset.")}};
+$("changePassword").onclick=()=>{const old=prompt("Enter your current password");if(old===null)return;if(old!==currentUser.password)return toast("Current password is incorrect.");const next=prompt("Enter a new password (minimum 6 characters)");if(!next||next.length<6)return toast("Password must be at least 6 characters.");const users=getUsers(),key=currentUser.username.toLowerCase();users[key].password=next;localStorage.setItem(KEYS.users,JSON.stringify(users));currentUser=users[key];toast("Password changed on this device.")};
+$("deleteAccount").onclick=()=>{if(!confirm("Delete this local account and all its project data from this browser?"))return;const users=getUsers(),key=currentUser.username.toLowerCase();delete users[key];localStorage.setItem(KEYS.users,JSON.stringify(users));localStorage.removeItem(userKey());localStorage.removeItem(profileKey());localStorage.removeItem(KEYS.session);currentUser=null;showAuth("login");toast("Local account deleted.")};
+function applyTheme(){const dark=localStorage.getItem(KEYS.theme)==="dark";document.body.classList.toggle("dark",dark);$("themeBtn").innerHTML=dark?"☀️ Light mode":"🌙 Dark mode";$("themeBtn").setAttribute("aria-pressed",String(dark))}
+$("themeBtn").onclick=()=>{const dark=!document.body.classList.contains("dark");localStorage.setItem(KEYS.theme,dark?"dark":"light");applyTheme()};
+window.addEventListener("resize",()=>{if(!$("appScreen").classList.contains("hidden")&&!signatureDirty)resizeCanvas()});
+(function init(){const remembered=localStorage.getItem(KEYS.remember);if(remembered){$("loginUser").value=remembered;$("remember").checked=true}const session=localStorage.getItem(KEYS.session),users=getUsers(),user=session&&users[session];if(user)enterApp(user);else showAuth("login")})();
+</script>
+</body>
+</html>
